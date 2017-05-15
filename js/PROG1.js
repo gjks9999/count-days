@@ -1,37 +1,35 @@
 
 
-//window.days = function () {
+
 function days() {
 	"use strict";
-	var a, c, d, e, f, g, D = 0, ll = 0, y, m, yyyy, mm, dd, today, p = 0;
-	
-    a = document.getElementById("form1");
-	c = document.getElementById("form2");
-	d = document.getElementById("form3");
+	var  bday, bmon, byear, D = 0, ll = 0, tempyear = 0, tempmonth, thisyear, thismonth, thisday, today, p = 0;
+
         
-	e = document.getElementById("einput").value;
-	f = document.getElementById("finput").value;
-	g = document.getElementById("ginput").value;
-    today = new Date();
-    dd = today.getDate();
-    mm = today.getMonth() + 1;
-    yyyy = today.getFullYear();
+	bday = document.getElementById("einput").value;
+	bmon = document.getElementById("finput").value;
+	byear = document.getElementById("ginput").value;
     
-    for (y = g; y < yyyy; y += 1, D += 1) {
-		for (m = 1; m < 13; m += 1) {
+	today = new Date();
+    thisday = today.getDate();
+    thismonth = today.getMonth() + 1;
+    thisyear = today.getFullYear();
+    
+    for (tempyear = byear; tempyear < thisyear; tempyear += 1, D += 1) {
+		for (tempmonth = 1; tempmonth < 13; tempmonth += 1) {
 			if (ll === 0) {
-				m = f;
+				tempmonth = bmon;
 			}
-			if (((m % 2 === 0) && (m !== 10) && (m !== 12)) || ((m === 9) || (m === 11))) {
+			if (((tempmonth % 2 === 0) && (tempmonth !== 10) && (tempmonth !== 12)) || ((tempmonth === 9) || (tempmonth === 11))) {
 				if (ll === 0) {
-					p = e;
+					p = bday;
 				} else {
 					p = 0;
 				}
-				if ((m === 2) && (y % 4 === 0)) {
+				if ((tempmonth === 2) && (tempyear % 4 === 0)) {
 					D = D + (29 - p);
 					ll += 1;
-				} else if ((m === 2)) {
+				} else if ((tempmonth === 2)) {
 					D = D + (28 - p);
 					ll += 1;
 				} else {
@@ -40,7 +38,7 @@ function days() {
 				}
 			} else {
 				if (ll === 0) {
-					p = e;
+					p = bday;
 				} else {
 					p = 0;
 				}
@@ -50,24 +48,35 @@ function days() {
 		}
 	}
 		
-	for (m = 1, y = yyyy; m < mm; m += 1) {
-		if (((m % 2 === 0) && (m !== 10) && (m !== 12)) || ((m === 9) || (m === 11))) {
-			if ((m === 2) && (y % 4 === 0)) {
+	for (tempmonth = 1, tempyear = thisyear; tempmonth < thismonth; tempmonth += 1) {
+		if (ll === 0) {
+			tempmonth = bmon;
+		}
+		
+		if (((tempmonth % 2 === 0) && (tempmonth !== 10) && (tempmonth !== 12)) || ((tempmonth === 9) || (tempmonth === 11))) {
+			if ((tempmonth === 2) && (tempyear % 4 === 0)) {
 				D = D + 29;
-			} else if ((m === 2)) {
+				ll += 1;
+			} else if ((tempmonth === 2)) {
 				D = D + (28);
+				ll += 1;
 			} else {
 				D = D + 30;
+				ll += 1;
 			}
 			
 		} else {
 			D = D + 31;
+			ll += 1;
 		}
 	}
-	D = D + dd;
+	D = D + thisday;
 	document.getElementById("demo").innerHTML += "hello friend...!" + "<br>";
-	document.getElementById("demo").innerHTML += "your current day:"  + D;
+	document.getElementById("demo").innerHTML += " your current day:"  + D;
         
-	document.getElementById("demo").innerHTML += "<br>" + "your current hour:(approx)" + (D * 24);
+	document.getElementById("demo").innerHTML += "<br>" + " your spended hours:(approx)=" + (D * 24);
+	document.getElementById("demo").innerHTML += "<br>" + "your date of birth  is:"  + bday + " / " + bmon + " / " + byear;
+	document.getElementById("demo").innerHTML += "<br>" + "Today date is:"  + thisday + " / " + thismonth + " / " + thisyear;
+	
 }
   
