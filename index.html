@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My-DAy</title>
+  <link rel="icon" href="images/jk.jpg" type="image/x-icon">
+	<meta name="description" content="Full screen background video demo">
+  <meta name="author" description="Call Me Nick">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oxygen:400,300,700">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  
+<div class="content" style="margin-top: -1em;">
+	<img  style="width:30em; margin-top: -4em"src="images/URCE.png" alt="usha rama logo"/>
+  <h1 class="content__heading" color: #ffffff;>Creative & Classic "CSE"</h1>
+	<h3 class="content__heading"  style="    margin-top: -0.5em;"color: #ffffff;>My day in #EARTH from BORN </h3>
+	<p class="brand_slogan" style="margin-top: 0em;  ont-size: 1.5em; color: #ffffff;">
+                            from Usha Rama college of engg and technology.telaprolu(po),NH-5,near Gannavaram..
+                        </p>
+	
+  <br><h1 style="font-family:cursive;font-size: 4em;
+        color: rgb(239, 0, 0);">Enter your details bellow..</h1>
+  <a href="cal.html" class="content__cta">click here..</a>
+</div><!-- /content -->
+
+<video id="my-video" class="video" muted loop>
+  <source src="media/demo.mp4" type="video/mp4">
+  <source src="media/demo.mp4" type="video/ogg">
+  <source src="media/demo.mp4" type="video/webm">
+</video><!-- /video -->
+
+<script>
+(function() {
+  /**
+   * Video element
+   * @type {HTMLElement}
+   */
+  var video = document.getElementById("my-video");
+
+  /**
+   * Check if video can play, and play it
+   */
+  video.addEventListener( "canplay", function() {
+    video.play();
+  });
+})();
+</script>
+
+</body>
+</html>
