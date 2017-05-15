@@ -10,8 +10,8 @@ function days() {
 	d = document.getElementById("form3");
         
 	e = document.getElementById("einput").value;
-	f = document.getElementById("einput").value;
-	g = document.getElementById("einput").value;
+	f = document.getElementById("finput").value;
+	g = document.getElementById("ginput").value;
     today = new Date();
     dd = today.getDate();
     mm = today.getMonth() + 1;
