@@ -8,9 +8,10 @@ function days() {
     a = document.getElementById("form1");
 	c = document.getElementById("form2");
 	d = document.getElementById("form3");
-	e = a.elements["b1[]"].value;
-	f = c.elements["b2[]"].value;
-	g = d.elements["b3[]"].value;
+        
+	e = document.getElementById("einput").value;
+	f = document.getElementById("einput").value;
+	g = document.getElementById("einput").value;
     today = new Date();
     dd = today.getDate();
     mm = today.getMonth() + 1;
